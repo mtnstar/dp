@@ -1,0 +1,7 @@
+---
+
+- name: psunix desktop environment playbook
+  hosts: localhost
+  roles:
+    # devel tools
+    - { role: vim, become: true }

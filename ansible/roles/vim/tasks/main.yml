@@ -1,0 +1,4 @@
+---
+
+- name: install vim
+  apt: pkg=vim state=latest
