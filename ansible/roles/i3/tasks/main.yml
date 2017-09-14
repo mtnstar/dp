@@ -1,0 +1,4 @@
+---
+
+- name: install i3
+  apt: pkg=i3 state=latest
