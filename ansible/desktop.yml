@@ -3,6 +3,8 @@
 - name: psunix desktop environment playbook
   hosts: localhost
   roles:
+    # profile / dotfiles
+    - { role: profile }
     # desktop
     - { role: i3, become: true }
     # devel tools
