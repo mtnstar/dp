@@ -3,9 +3,8 @@
 - name: psunix desktop environment playbook
   hosts: localhost
   roles:
-    # profile / dotfiles
     - { role: profile }
-    # desktop
+    - { role: nextcloud, become: true }
     - { role: i3, become: true }
     # devel tools
     - { role: vim, become: true }
