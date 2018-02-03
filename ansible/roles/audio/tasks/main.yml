@@ -1,0 +1,4 @@
+---
+
+- name: install pavucontrol
+  apt: pkg=pavucontrol state=latest

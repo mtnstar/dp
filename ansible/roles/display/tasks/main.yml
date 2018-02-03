@@ -1,0 +1,4 @@
+---
+
+- name: install arandr
+  apt: pkg=arandr state=latest

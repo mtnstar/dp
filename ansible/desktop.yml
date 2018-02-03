@@ -10,3 +10,5 @@
     - { role: vim, become: true }
     - { role: firefox, become: true }
     - { role: chromium, become: true }
+    - { role: audio, become: true }
+    - { role: display, become: true }
