@@ -2,3 +2,22 @@
 
 - name: install vim
   apt: pkg=vim state=latest
+
+- name: clone vim config
+  become: false
+  git: repo=https://github.com/psunix/dot-vim.git dest="{{ ansible_env.HOME }}/.vim" update=yes
+
+- name: create config symlink
+  become: false
+  file: path="{{ ansible_env.HOME }}/.vimrc"
+        src="{{ ansible_env.HOME }}/.vim/vimrc"
+        state=link
+        force=yes
+
+- name: install vim plugins
+  become: false
+  shell: 'vim -E -c "source ~/.vimrc" -c PlugInstall -c qa'
+
+- name: update vim plugins
+  become: false
+  shell: 'vim -E -c "source ~/.vimrc" -c PlugUpdate -c qa'
