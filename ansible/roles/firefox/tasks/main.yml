@@ -1,0 +1,4 @@
+---
+
+- name: install firefox
+  apt: pkg=firefox state=latest

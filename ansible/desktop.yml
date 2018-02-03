@@ -8,3 +8,5 @@
     - { role: i3, become: true }
     # devel tools
     - { role: vim, become: true }
+    - { role: firefox, become: true }
+    - { role: chromium, become: true }

@@ -1,0 +1,4 @@
+---
+
+- name: install chromium browser
+  apt: pkg=chromium-browser state=latest
