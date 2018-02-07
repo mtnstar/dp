@@ -12,3 +12,4 @@
     - { role: chromium, become: true }
     - { role: audio, become: true }
     - { role: display, become: true }
+    - { role: docker, become: true }
