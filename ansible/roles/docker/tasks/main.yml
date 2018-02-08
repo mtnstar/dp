@@ -9,3 +9,8 @@
 
 - name: install docker
   apt: pkg=docker-ce state=latest
+
+- name: add current user to docker group
+  user: name={{ ansible_env.USER }}
+        groups=docker
+        append=yes
