@@ -13,3 +13,9 @@
     - { role: audio, become: true }
     - { role: display, become: true }
     - { role: docker, become: true }
+    ## rvm
+    - { role: rvm_io.ruby,
+        tags: ruby,
+        rvm1_rubies: ['ruby-2.3', 'ruby-2.2'],
+        rvm1_user: "{{ ansible_env.USER }}"
+    }
