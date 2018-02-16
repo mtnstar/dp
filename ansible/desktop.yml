@@ -19,3 +19,4 @@
         rvm1_rubies: ['ruby-2.3', 'ruby-2.2'],
         rvm1_user: "{{ ansible_env.USER }}"
     }
+    - { role: openshift-client }

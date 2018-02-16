@@ -1,0 +1,31 @@
+---
+
+- name: oc client download
+  get_url:
+    url: 'https://github.com/openshift/origin/releases/download/v3.7.1/openshift-origin-client-tools-v3.7.1-ab0f056-linux-64bit.tar.gz'
+    dest: /tmp/openshift-origin-client-tools-v3.7.1-ab0f056-linux-64bit.tar.gz
+    checksum: 'sha256:56e9dbff7e5e4ade1e92cc10ff1bd1ae2789ec400be0d8a5b2177fd6c465af21'
+
+- name: create bin directory if required...
+  file:
+    path: '~/bin'
+    state: directory
+    mode: 0700
+
+- name: oc client unarchive
+  unarchive:
+    remote_src: yes
+    src: /tmp/openshift-origin-client-tools-v3.7.1-ab0f056-linux-64bit.tar.gz
+    dest: '~/bin'
+
+- name: oc client link
+  file:
+    src: '~/bin/openshift-origin-client-tools-v3.7.1-ab0f056-linux-64bit/oc'
+    dest: '~/bin/oc'
+    state: link
+    force: true
+
+- name: oc client cleanup
+  file:
+    path: /tmp/openshift-origin-client-tools-v3.7.1-ab0f056-linux-64bit.tar.gz
+    state: absent
