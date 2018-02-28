@@ -1,0 +1,15 @@
+---
+- name: create bin directory if required...
+  file:
+    path: '~/bin'
+    state: directory
+    mode: 0700
+
+- name: kubectl download
+  get_url:
+    url: 'https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl'
+    dest: ~/bin/
+    checksum: 'sha256:81eb30e62a12d6e0527a6a3c2a9501b56d65777bf66684739b16a0afe826c8f8'
+
+- name: kubectl set executable
+  file: dest=~/bin/kubectl mode=x

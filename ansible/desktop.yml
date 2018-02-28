@@ -20,3 +20,4 @@
         rvm1_user: "{{ ansible_env.USER }}"
     }
     - { role: openshift-client }
+    - { role: kubectl }
