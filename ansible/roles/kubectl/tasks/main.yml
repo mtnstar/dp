@@ -12,4 +12,4 @@
     checksum: 'sha256:81eb30e62a12d6e0527a6a3c2a9501b56d65777bf66684739b16a0afe826c8f8'
 
 - name: kubectl set executable
-  file: dest=~/bin/kubectl mode=x
+  file: dest=~/bin/kubectl mode=a+x
