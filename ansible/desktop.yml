@@ -21,3 +21,4 @@
     }
     - { role: openshift-client }
     - { role: kubectl }
+    - { role: s2i }

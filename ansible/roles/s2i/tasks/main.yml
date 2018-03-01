@@ -1,0 +1,26 @@
+---
+- name: create bin directory if required...
+  file:
+    path: '~/bin'
+    state: directory
+    mode: 0700
+
+- name: s2i download
+  get_url:
+    url: 'https://github.com/openshift/source-to-image/releases/download/v1.1.9/source-to-image-v1.1.9-db2b4645-linux-amd64.tar.gz'
+    dest: /tmp/s2i.tar.gz
+    checksum: 'sha256:744fbf8d55eeee6be3bcbec67ec07e418940d71789756fccfa471150a18ca973'
+
+- name: s2i unarchive
+  unarchive:
+    remote_src: yes
+    src: /tmp/s2i.tar.gz
+    dest: '~/bin'
+
+- name: s2i set executable
+  file: dest=~/bin/s2i mode=a+x
+
+- name: s2i cleanup
+  file:
+    path: /tmp/s2i.tar.gz
+    state: absent
