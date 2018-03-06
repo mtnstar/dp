@@ -1,0 +1,43 @@
+---
+
+- name: install git
+  apt: pkg=git state=latest
+
+- name: install gitg
+  apt: pkg=gitg state=latest
+
+- name: install meld
+  apt: pkg=meld state=latest
+
+- name: install gnome keyring dev
+  apt: pkg=libgnome-keyring-dev state=latest
+
+- name: compile git gnome keyring helper
+  command: make
+  args:
+    chdir: /usr/share/doc/git/contrib/credential/gnome-keyring
+
+- name: add gnome keyring helper to git
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  command: git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+
+- name: link gitignore
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  file: src="{{ ansible_env.HOME }}/git/psunix/profile/git/gitignore" dest="{{ ansible_env.HOME }}/.gitignore" state=link
+
+- name: setup git config
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  command: git config --global {{ item }}
+  with_items:
+    - alias.ci commit
+    - alias.st status
+    - alias.up pull --rebase
+    - alias.br branch
+    - alias.dt difftool
+    - core.editor vim
+    - core.excludesfile ~/.gitignore
+    - color.ui auto
+    - push.default simple
