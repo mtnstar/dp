@@ -1,0 +1,13 @@
+---
+
+- name: install qt webkit dev
+  apt: pkg=libqtwebkit-dev state=latest
+
+- name: install mysql client
+  apt: pkg=mysql-client state=latest
+
+- name: install dev libs
+  apt: pkg=libmysqlclient-dev state=latest
+
+- name: install sqlite3
+  apt: pkg=sqlite3 state=latest
