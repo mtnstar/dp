@@ -6,7 +6,7 @@
 - name: install nextcloud client
   apt: pkg=nextcloud-client state=latest
 
-- name: start nextcloud client
-  become: true
-  become_user: "{{ ansible_env.USER }}"
-  shell: 'nextcloud &'
+#- name: start nextcloud client
+  #become: true
+  #become_user: "{{ ansible_env.USER }}"
+  #shell: 'nextcloud &'
