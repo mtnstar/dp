@@ -32,6 +32,7 @@
   become_user: "{{ ansible_env.USER }}"
   command: git config --global {{ item }}
   with_items:
+    - alias.co checkout
     - alias.ci commit
     - alias.st status
     - alias.up pull --rebase
