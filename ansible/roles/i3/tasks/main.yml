@@ -6,6 +6,9 @@
 - name: install i3status
   apt: pkg=i3status state=latest
 
+- name: install i3status
+  apt: pkg=dmenu state=latest
+
 - name: create i3 config dir
   file: path="{{ ansible_env.HOME }}/.i3" state=directory
 
