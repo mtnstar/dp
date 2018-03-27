@@ -11,3 +11,7 @@
 
 - name: install sqlite3
   apt: pkg=sqlite3 state=latest
+
+- name: install postgresql dev lib
+  apt: pkg=libpq-dev state=latest
+

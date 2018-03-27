@@ -17,3 +17,6 @@
 
 - name: install i3lock
   apt: pkg=i3lock state=latest
+
+- name: install xbacklight
+  apt: pkg=xbacklight state=latest
