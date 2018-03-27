@@ -14,3 +14,6 @@
 
 - name: link i3 config from github profile files
   file: src="{{ ansible_env.HOME }}/git/psunix/profile/i3/config" dest="{{ ansible_env.HOME}}/.i3/config" state=link
+
+- name: install i3lock
+  apt: pkg=i3lock state=latest
