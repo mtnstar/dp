@@ -14,6 +14,7 @@
     - { role: display, become: true }
     - { role: docker, become: true }
     - { role: git, become: true }
+    - { role: nitrokey, become: true }
     - { role: ruby-dev-libs, become: true }
     # rvm
     - { role: rvm_io.ruby,
