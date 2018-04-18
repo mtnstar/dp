@@ -3,7 +3,7 @@
 - name: clone github profile repo
   git: repo=https://github.com/psunix/profile.git dest="{{ ansible_env.HOME }}/git/psunix/profile" update=yes
 
-- name: oc client link
+- name: link dot bashrc
   file:
     src: '~/git/psunix/profile/bash/dot_bashrc'
     dest: '~/.bashrc'

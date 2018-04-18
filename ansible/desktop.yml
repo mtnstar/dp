@@ -3,26 +3,26 @@
 - name: psunix desktop environment playbook
   hosts: localhost
   roles:
-    - { role: profile }
-    - { role: nextcloud, become: true }
-    - { role: i3, become: true }
-    - { role: kvm, become: true }
+    - { role: profile, tags: ['profile'] }
+    - { role: nextcloud, become: true, tags: ['nextcloud'] }
+    - { role: i3, become: true , tags: ['i3'] }
+    - { role: kvm, become: true , tags: ['kvm'] }
     # devel tools
-    - { role: vim, become: true }
-    - { role: firefox, become: true }
-    - { role: chromium, become: true }
-    - { role: audio, become: true }
-    - { role: display, become: true }
-    - { role: docker, become: true }
-    - { role: git, become: true }
-    - { role: nitrokey, become: true }
-    - { role: ruby-dev-libs, become: true }
+    - { role: vim, become: true , tags: ['vim'] }
+    - { role: firefox, become: true , tags: ['firefox'] }
+    - { role: chromium, become: true , tags: ['chromium'] }
+    - { role: audio, become: true , tags: ['audio'] }
+    - { role: display, become: true , tags: ['display'] }
+    - { role: docker, become: true , tags: ['docker'] }
+    - { role: git, become: true , tags: ['git'] }
+    - { role: nitrokey, become: true , tags: ['nitrokey'] }
+    - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
     # rvm
     - { role: rvm_io.ruby,
-        tags: ruby,
+        tags: rvm,
         rvm1_rubies: ['ruby-2.3', 'ruby-2.2'],
         rvm1_user: "{{ ansible_env.USER }}"
     }
-    - { role: openshift-client }
-    - { role: kubectl }
-    - { role: s2i }
+    - { role: openshift-client , tags: ['openshift-client'] }
+    - { role: kubectl , tags: ['kubectl'] }
+    - { role: s2i , tags: ['s2i'] }
