@@ -1,0 +1,7 @@
+---
+
+- name: install virt-manager
+  apt: pkg=virt-manager state=latest
+
+- name: install qemu-kvm
+  apt: pkg=qemu-kvm state=latest

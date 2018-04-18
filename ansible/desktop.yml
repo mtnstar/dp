@@ -6,6 +6,7 @@
     - { role: profile }
     - { role: nextcloud, become: true }
     - { role: i3, become: true }
+    - { role: kvm, become: true }
     # devel tools
     - { role: vim, become: true }
     - { role: firefox, become: true }
