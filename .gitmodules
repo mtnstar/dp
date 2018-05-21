@@ -1,0 +1,3 @@
+[submodule "ansible/library/rvm"]
+	path = ansible/roles/rvm_io.ruby
+	url = https://github.com/rvm/rvm1-ansible
