@@ -23,6 +23,14 @@
         rvm1_rubies: ['ruby-2.3', 'ruby-2.2'],
         rvm1_user: "{{ ansible_env.USER }}"
     }
+    # nvm
+    - { role: nvm,
+        tags: nvm,
+        nvm: { version: v0.33.11,
+               node_version: 8.11.2,
+               user: "{{ ansible_env.USER }}"
+             }
+    }
     - { role: openshift-client , tags: ['openshift-client'] }
     - { role: kubectl , tags: ['kubectl'] }
     - { role: s2i , tags: ['s2i'] }
