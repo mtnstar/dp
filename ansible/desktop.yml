@@ -26,4 +26,4 @@
     - { role: openshift-client , tags: ['openshift-client'] }
     - { role: kubectl , tags: ['kubectl'] }
     - { role: s2i , tags: ['s2i'] }
-    - { role: terminal , tags: ['terminal'] }
+    - { role: terminal , become: true, tags: ['terminal'] }
