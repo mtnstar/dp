@@ -1,0 +1,4 @@
+---
+
+- name: install usb creator gtk
+  apt: pkg=usb-creator-gtk state=latest

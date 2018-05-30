@@ -4,6 +4,7 @@
   hosts: localhost
   roles:
     - { role: profile, tags: ['profile'] }
+    - { role: usb-utils, become: true, tags: ['usb-utils'] }
     - { role: nextcloud, become: true, tags: ['nextcloud'] }
     - { role: i3, become: true , tags: ['i3'] }
     - { role: kvm, become: true , tags: ['kvm'] }
