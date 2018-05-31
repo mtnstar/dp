@@ -7,9 +7,9 @@
 
 - name: kubectl download
   get_url:
-    url: 'https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl'
+    url: 'https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl'
     dest: ~/bin/
-    checksum: 'sha256:81eb30e62a12d6e0527a6a3c2a9501b56d65777bf66684739b16a0afe826c8f8'
+    checksum: 'sha256:62893257193f9e848f383055993e63166ab67bf872c85e896ce9b9167ba85403'
 
 - name: kubectl set executable
   file: dest=~/bin/kubectl mode=a+x
