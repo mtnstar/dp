@@ -1,0 +1,3 @@
+---
+- name: install uuid
+  apt: pkg=uuid state=latest

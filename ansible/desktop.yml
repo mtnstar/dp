@@ -8,6 +8,7 @@
     - { role: nextcloud, become: true, tags: ['nextcloud'] }
     - { role: i3, become: true , tags: ['i3'] }
     - { role: kvm, become: true , tags: ['kvm'] }
+    - { role: utils, become: true , tags: ['utils'] }
     # devel tools
     - { role: vim, become: true , tags: ['vim'] }
     - { role: firefox, become: true , tags: ['firefox'] }
@@ -22,7 +23,8 @@
     - { role: rvm_io.ruby,
         tags: rvm,
         rvm1_rubies: ['ruby-2.3', 'ruby-2.2'],
-        rvm1_user: "{{ ansible_env.USER }}"
+        rvm1_user: "{{ ansible_env.USER }}",
+        rvm1_bundler_install: true
     }
     # nvm
     - { role: nvm,
