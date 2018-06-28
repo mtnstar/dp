@@ -1,3 +1,6 @@
 ---
 - name: install uuid
   apt: pkg=uuid state=latest
+
+- name: install virt-viewer
+  apt: pkg=virt-viewer state=latest
