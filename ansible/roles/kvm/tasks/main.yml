@@ -1,13 +1,48 @@
 ---
 
+- name: install libvirt daemon
+  apt: pkg=libvirt-daemon state=latest
+
 - name: install virt-manager
   apt: pkg=virt-manager state=latest
 
 - name: install qemu-kvm
   apt: pkg=qemu-kvm state=latest
 
+- name: install qemu-system
+  apt: pkg=qemu-system state=latest
+
 - name: install qemu-utils
   apt: pkg=qemu-utils state=latest
 
 - name: install libvirt-dev
   apt: pkg=libvirt-dev state=latest
+
+- name: install libvirt-bin
+  apt: pkg=libvirt-bin state=latest
+
+- name: install bridge utils
+  apt: pkg=bridge-utils state=latest
+
+- name: install firewalld
+  apt: pkg=firewalld state=latest
+
+- name: install ebtables
+  apt: pkg=ebtables state=latest
+
+- name: install dnsmasq
+  apt: pkg=dnsmasq state=latest
+
+- name: install spice client
+  apt: pkg=spice-client-gtk state=latest
+
+- name: install virt viewer
+  apt: pkg=virt-viewer state=latest
+
+- name: install spice client gtk gir
+  apt: pkg=gir1.2-spiceclientgtk-3.0 state=latest
+
+- name: Adding user to libvirtd group
+  user: name={{ ansible_env.USER }}
+        groups=kvm
+        append=yes
