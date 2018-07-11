@@ -33,6 +33,9 @@
 - name: install dnsmasq
   apt: pkg=dnsmasq state=latest
 
+- name: disable systemd resolve dns stub since it conflicts with dnsmasq
+  ini_file: dest=/etc/systemd/resolved.conf section=Resolve option=DNSStubListener value=no backup=no
+
 - name: install spice client
   apt: pkg=spice-client-gtk state=latest
 
