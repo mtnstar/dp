@@ -20,3 +20,6 @@
 
 - name: install xbacklight
   apt: pkg=xbacklight state=latest
+
+- name: install xss-lock
+  apt: pkg=xss-lock state=latest
