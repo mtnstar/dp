@@ -15,3 +15,6 @@
 - name: install postgresql dev lib
   apt: pkg=libpq-dev state=latest
 
+- name: install graphviz
+  apt: pkg=graphviz state=latest
+
