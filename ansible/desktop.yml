@@ -9,6 +9,7 @@
     - { role: i3, become: true , tags: ['i3'] }
     - { role: kvm, become: true , tags: ['kvm'] }
     - { role: utils, become: true , tags: ['utils'] }
+    - { role: gfx, become: true , tags: ['gfx'] }
     # devel tools
     - { role: vim, become: true , tags: ['vim'] }
     - { role: firefox, become: true , tags: ['firefox'] }

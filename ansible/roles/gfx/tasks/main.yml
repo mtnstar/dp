@@ -1,0 +1,4 @@
+---
+
+- name: install inkscape
+  apt: pkg=inkscape state=latest
