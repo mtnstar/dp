@@ -16,9 +16,9 @@
 
 - name: kubetpl download
   get_url:
-    url: 'https://github.com/shyiko/kubetpl/releases/download/0.2.0/kubetpl-0.2.0-linux-amd64'
+    url: 'https://github.com/shyiko/kubetpl/releases/download/0.7.1/kubetpl-0.7.1-linux-amd64'
     dest: ~/bin/kubetpl
-    checksum: 'sha256:dd3a23a3e1b71024735e61b0c60909e13d1b4fe81e943a6bc764674f8c580cc1'
+    checksum: 'sha256:46e982db7487df997ce6ae2e739f198a0868d4bb00f46a578610c02162e20dd5'
 
 - name: kubetpl set executable
   file: dest=~/bin/kubetpl mode=a+x
