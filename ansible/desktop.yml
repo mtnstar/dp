@@ -22,7 +22,7 @@
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
     # rvm
     - { role: rvm_io.ruby,
-        tags: rvm,
+        tags: 'rvm',
         rvm1_rubies: ['ruby-2.3', 'ruby-2.2', 'ruby-2.5'],
         rvm1_user: "{{ ansible_env.USER }}",
         rvm1_bundler_install: true
@@ -39,3 +39,4 @@
     - { role: kubectl , tags: ['kubectl'] }
     - { role: s2i , tags: ['s2i'] }
     - { role: terminal , become: true, tags: ['terminal'] }
+    - { role: astro, become: true , tags: ['astro'] }
