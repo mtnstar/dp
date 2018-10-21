@@ -2,3 +2,14 @@
 
 - name: install arandr
   apt: pkg=arandr state=latest
+
+- name: install xbacklight
+  apt: pkg=xbacklight state=latest
+
+- name: xbacklight intel xorg config
+  template:
+    src: 20-intel.conf
+    dest: /usr/share/X11/xorg.conf.d/20-intel.conf
+    owner: root
+    group: root
+    mode: 0444
