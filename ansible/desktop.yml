@@ -41,3 +41,4 @@
     - { role: s2i , tags: ['s2i'] }
     - { role: terminal , become: true, tags: ['terminal'] }
     - { role: astro, become: true , tags: ['astro'] }
+    - { role: vagrant, become: true , tags: ['vagrant'] }

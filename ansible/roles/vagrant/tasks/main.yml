@@ -1,0 +1,7 @@
+---
+- name: install vagrant
+  apt: pkg=vagrant state=latest
+
+- name: install vagrant libvirt plugin
+  become: true
+  shell: 'vagrant plugin install vagrant-libvirt'
