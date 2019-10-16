@@ -41,4 +41,4 @@
     - core.editor vim
     - core.excludesfile ~/.gitignore
     - color.ui auto
-    - push.default simple
+    - push.default current
