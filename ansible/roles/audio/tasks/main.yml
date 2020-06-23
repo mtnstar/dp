@@ -3,5 +3,5 @@
 - name: install pavucontrol
   apt: pkg=pavucontrol state=latest
 
-- name: install pulseaudio dlna
-  apt: pkg=pulseaudio-dlna state=latest
+# - name: install pulseaudio dlna
+  # apt: pkg=pulseaudio-dlna state=latest
