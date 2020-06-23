@@ -18,9 +18,6 @@
 - name: install libvirt-dev
   apt: pkg=libvirt-dev state=latest
 
-- name: install libvirt-bin
-  apt: pkg=libvirt-bin state=latest
-
 - name: install bridge utils
   apt: pkg=bridge-utils state=latest
 
