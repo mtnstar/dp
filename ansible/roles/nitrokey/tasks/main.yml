@@ -1,12 +1,12 @@
 ---
 
-- name: add nitrokey repository
-  apt_repository:
-    repo: 'ppa:nitrokey-team/ppa'
-    codename: xenial
+# - name: add nitrokey repository
+  # apt_repository:
+    # repo: 'ppa:nitrokey-team/ppa'
+    # codename: xenial
 
-- name: install nitrokey app
-  apt: pkg=nitrokey-app state=latest
+# - name: install nitrokey app
+  # apt: pkg=nitrokey-app state=latest
 
-- name: install openpgp support for nitrokey
-  apt: pkg=libccid state=latest
+# - name: install openpgp support for nitrokey
+  # apt: pkg=libccid state=latest

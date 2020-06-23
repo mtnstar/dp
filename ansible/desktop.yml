@@ -19,7 +19,7 @@
     - { role: display, become: true , tags: ['display'] }
     - { role: docker, become: true , tags: ['docker'] }
     - { role: git, become: true , tags: ['git'] }
-    - { role: nitrokey, become: true , tags: ['nitrokey'] }
+    # - { role: nitrokey, become: true , tags: ['nitrokey'] }
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
     # debug !
     ## rvm
