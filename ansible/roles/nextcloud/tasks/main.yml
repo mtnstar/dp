@@ -1,10 +1,10 @@
 ---
+- apt_repository:
+    repo: ppa:nextcloud-devs/client
+    state: absent
 
-- name: add nextcloud client ppa
-  apt_repository: repo='ppa:nextcloud-devs/client' codename='xenial'
-
-- name: install nextcloud client
-  apt: pkg=nextcloud-client state=latest
+- name: install nextcloud desktop
+  apt: pkg=nextcloud-desktop state=latest
 
 #- name: start nextcloud client
   #become: true
