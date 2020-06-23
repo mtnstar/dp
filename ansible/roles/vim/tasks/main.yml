@@ -14,10 +14,11 @@
         state=link
         force=yes
 
-- name: install vim plugins
-  become: false
-  shell: 'vim -E -c "source ~/.vimrc" -c PlugInstall -c qa'
+# DEBUG !!
+#- name: install vim plugins
+  #become: false
+  #shell: 'vim -E -c "source ~/.vimrc" -c PlugInstall -c qa'
 
-- name: update vim plugins
-  become: false
-  shell: 'vim -E -c "source ~/.vimrc" -c PlugUpdate -c qa'
+#- name: update vim plugins
+  #become: false
+  #shell: 'vim -E -c "source ~/.vimrc" -c PlugUpdate -c qa'
