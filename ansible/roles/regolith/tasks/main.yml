@@ -1,13 +1,19 @@
 ---
 
-- name: install i3
-  apt: pkg=i3 state=latest
+- name: add regolith repo
+  apt_repository: repo='ppa:regolith-linux/release' codename='bionic'
 
-- name: install i3status
-  apt: pkg=i3status state=latest
+- name: install regolith-desktop
+  apt: pkg=regolith-desktop state=latest
 
-- name: install i3status
-  apt: pkg=dmenu state=latest
+- name: install i3xrocks-net-traffic
+  apt: pkg=i3xrocks-net-traffic state=latest
+
+- name: install i3xrocks-cpu-usage
+  apt: pkg=i3xrocks-cpu-usage state=latest
+
+- name: install i3xrocks-time
+  apt: pkg=i3xrocks-time state=latest
 
 - name: create i3 config dir
   file: path="{{ ansible_env.HOME }}/.i3" state=directory
@@ -17,9 +23,3 @@
 
 - name: link lock background image
   file: src="{{ ansible_env.HOME }}/git/psunix/profile/i3/lock-bg.png" dest="{{ ansible_env.HOME}}/.i3/lock-bg.png" state=link
-
-- name: install i3lock
-  apt: pkg=i3lock state=latest
-
-- name: install xss-lock
-  apt: pkg=xss-lock state=latest

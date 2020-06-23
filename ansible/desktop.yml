@@ -6,7 +6,7 @@
     - { role: profile, tags: ['profile'] }
     - { role: usb-utils, become: true, tags: ['usb-utils'] }
     - { role: nextcloud, become: true, tags: ['nextcloud'] }
-    - { role: i3, become: true , tags: ['i3'] }
+    - { role: regolith, become: true , tags: ['regolith'] }
     - { role: kvm, become: true , tags: ['kvm'] }
     - { role: utils, become: true , tags: ['utils'] }
     - { role: msg-tools, become: true , tags: ['msg-tools'] }
