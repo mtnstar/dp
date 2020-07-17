@@ -7,6 +7,12 @@
   become: false
   git: repo=https://github.com/psunix/dot-vim.git dest="{{ ansible_env.HOME }}/.vim" update=yes
 
+- name: Create backup dir
+  become: false
+  file:
+    path: "{{ ansible_env.HOME }}/.vim/backup"
+    state: directory
+
 - name: create config symlink
   become: false
   file: path="{{ ansible_env.HOME }}/.vimrc"
