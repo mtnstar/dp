@@ -1,4 +1,7 @@
 ---
+- name: install battery status
+  apt: pkg=i3xrocks-battery state=latest
+
 - name: create i3 config dir
   file: path="{{ ansible_env.HOME }}/.i3" state=directory
 
