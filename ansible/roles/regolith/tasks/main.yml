@@ -2,11 +2,8 @@
 - name: install battery status
   apt: pkg=i3xrocks-battery state=latest
 
-- name: create i3 config dir
-  file: path="{{ ansible_env.HOME }}/.i3" state=directory
+- name: create regolith config dir
+  file: path="{{ ansible_env.HOME }}/.config/regolith/i3" state=directory
 
 - name: link i3 config from github profile files
-  file: src="{{ ansible_env.HOME }}/git/psunix/profile/i3/config" dest="{{ ansible_env.HOME}}/.i3/config" state=link
-
-- name: link lock background image
-  file: src="{{ ansible_env.HOME }}/git/psunix/profile/i3/lock-bg.png" dest="{{ ansible_env.HOME}}/.i3/lock-bg.png" state=link
+  file: src="{{ ansible_env.HOME }}/git/psunix/profile/regolith/i3/config" dest="{{ ansible_env.HOME}}/.config/regolith/i3/config" state=link
