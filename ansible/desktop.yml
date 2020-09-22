@@ -43,3 +43,4 @@
     - { role: terminal , become: true, tags: ['terminal'] }
     - { role: astro, become: true , tags: ['astro'] }
     - { role: vagrant, become: true , tags: ['vagrant'] }
+    - { role: office, become: true , tags: ['office'] }

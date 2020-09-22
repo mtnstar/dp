@@ -1,0 +1,4 @@
+---
+
+- name: install libreoffice
+  apt: pkg=libreoffice state=latest
