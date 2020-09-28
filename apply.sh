@@ -21,6 +21,11 @@ if ! which ansible-playbook > /dev/null; then
   ./bin/install_ansible.sh
 fi
 
-ansible-playbook ansible/desktop.yml --ask-become-pass
+
+if [ $# -eq 0 ]; then
+  ansible-playbook ansible/desktop.yml --ask-become-pass
+else
+  ansible-playbook ansible/desktop.yml --ask-become-pass -t=$1
+fi
 
 exit 0
