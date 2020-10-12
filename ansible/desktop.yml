@@ -44,3 +44,5 @@
     - { role: astro, become: true , tags: ['astro'] }
     - { role: vagrant, become: true , tags: ['vagrant'] }
     - { role: office, become: true , tags: ['office'] }
+    - { role: printer, become: true , tags: ['printer'] }
+    - { role: dev-tools, become: true , tags: ['dev-tools'] }
