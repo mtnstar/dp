@@ -25,9 +25,9 @@
 
 - name: kustomize download
   get_url:
-    url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.8.4/kustomize_v3.8.4_linux_amd64.tar.gz'
+    url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.8.8/kustomize_v3.8.8_linux_amd64.tar.gz'
     dest: /tmp/kustomize.tar.gz
-    checksum: 'sha256:194caffbdb59d8fc887488ba8fa3dce7b68ccf816737b57bde7338ca980f4912'
+    checksum: 'sha256:175938206f23956ec18dac3da0816ea5b5b485a8493a839da278faac82e3c303'
 
 - name: create bin directory if required...
   file:
