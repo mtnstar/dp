@@ -21,14 +21,6 @@
     - { role: git, become: true , tags: ['git'] }
     # - { role: nitrokey, become: true , tags: ['nitrokey'] }
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
-    # debug !
-    ## rvm
-    #- { role: rvm_io.ruby,
-        #tags: 'rvm',
-        #rvm1_rubies: ['ruby-2.3', 'ruby-2.2', 'ruby-2.5'],
-        #rvm1_user: "{{ ansible_env.USER }}",
-        #rvm1_bundler_install: true
-    #}
     # nvm
     - { role: nvm,
         tags: nvm,
