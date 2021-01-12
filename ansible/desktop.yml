@@ -38,3 +38,4 @@
     - { role: office, become: true , tags: ['office'] }
     - { role: printer, become: true , tags: ['printer'] }
     - { role: dev-tools, become: true , tags: ['dev-tools'] }
+    - { role: udev, become: true , tags: ['udev'] }

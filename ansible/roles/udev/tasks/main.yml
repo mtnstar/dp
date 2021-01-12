@@ -1,0 +1,12 @@
+---
+
+- name: add udev rule for disabling unused usb audio devices
+  template:
+    src: 99-disable-unused-audio-dev.rules
+    dest: /etc/udev/rules.d/
+    owner: root
+    group: root
+    mode: 0444
+
+- name: reload udev rules
+  shell: 'udevadm control --reload-rules && udevadm trigger'
