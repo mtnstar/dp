@@ -5,3 +5,6 @@
 
 - name: install gimp
   apt: pkg=gimp state=latest
+
+- name: install okular
+  apt: pkg=okular state=latest
