@@ -21,14 +21,6 @@
     - { role: git, become: true , tags: ['git'] }
     # - { role: nitrokey, become: true , tags: ['nitrokey'] }
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
-    # nvm
-    - { role: nvm,
-        tags: nvm,
-        nvm: { version: v0.33.11,
-               node_version: 8.11.2,
-               user: "{{ ansible_env.USER }}"
-             }
-    }
     - { role: openshift-client , tags: ['openshift-client'] }
     - { role: k8s-tools , tags: ['k8s-tools'] }
     - { role: s2i , tags: ['s2i'] }
