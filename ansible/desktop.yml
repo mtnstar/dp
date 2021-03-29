@@ -18,6 +18,7 @@
     - { role: audio, become: true , tags: ['audio'] }
     - { role: display, become: true , tags: ['display'] }
     - { role: docker, become: true , tags: ['docker'] }
+    - { role: dev-tools, become: true , tags: ['dev-tools'] }
     - { role: git, become: true , tags: ['git'] }
     # - { role: nitrokey, become: true , tags: ['nitrokey'] }
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
@@ -29,6 +30,5 @@
     - { role: vagrant, become: true , tags: ['vagrant'] }
     - { role: office, become: true , tags: ['office'] }
     - { role: printer, become: true , tags: ['printer'] }
-    - { role: dev-tools, become: true , tags: ['dev-tools'] }
     - { role: udev, become: true , tags: ['udev'] }
     - { role: streaming-tools, become: true , tags: ['streaming-tools'] }

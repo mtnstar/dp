@@ -6,3 +6,6 @@
 
 - name: install net-tools
   apt: pkg=net-tools state=latest
+
+- name: install build essential
+  apt: pkg=build-essential state=latest
