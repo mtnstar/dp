@@ -1,0 +1,5 @@
+---
+
+- name: install zoom client
+  apt:
+    deb: https://zoom.us/client/latest/zoom_amd64.deb
