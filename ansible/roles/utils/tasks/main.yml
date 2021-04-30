@@ -10,3 +10,6 @@
 
 - name: install jq command line json parser
   apt: pkg=jq state=latest
+
+- name: install gnome disk utils
+  apt: pkg=gnome-disk-utility state=latest
