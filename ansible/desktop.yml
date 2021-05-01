@@ -21,6 +21,7 @@
     - { role: dev-tools, become: true , tags: ['dev-tools'] }
     - { role: git, become: true , tags: ['git'] }
     - { role: nitrokey, become: true , tags: ['nitrokey'] }
+    - { role: yubikey, become: true , tags: ['yubikey'] }
     - { role: ruby-dev-libs, become: true , tags: ['ruby-dev-libs'] }
     - { role: openshift-client , tags: ['openshift-client'] }
     - { role: k8s-tools , tags: ['k8s-tools'] }
