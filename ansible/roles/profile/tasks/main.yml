@@ -1,9 +1,11 @@
 ---
 
 - name: clone github profile repo
-  git: repo=https://github.com/psunix/profile.git dest="{{ ansible_env.HOME }}/git/psunix/profile" update=yes
+  git: repo=https://github.com/psunix/profile.git dest=/home/ps/git/psunix/profile update=yes
 
 - name: link dot bashrc
+  become: true
+  become_user: ps
   file:
     src: '~/git/psunix/profile/bash/dot_bashrc'
     dest: '~/.bashrc'
