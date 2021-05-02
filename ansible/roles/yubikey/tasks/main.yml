@@ -14,6 +14,9 @@
 - name: install libpam yubico
   apt: pkg=libpam-yubico state=latest
 
+- name: install libpam-u2f
+  apt: pkg=libpam-u2f state=latest
+
 - name: install yubico piv tool
   apt: pkg=yubico-piv-tool state=latest
 
