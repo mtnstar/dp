@@ -1,8 +1,8 @@
 ---
-
 - name: install dconf-cli
   apt: pkg=dconf-cli state=latest
 
 - name: import gnome terminal settings
-  become: false
+  become: true
+  become_user: ps
   shell: 'dconf load /org/gnome/terminal/legacy/ < ~/git/psunix/profile/gnome_terminal/settings.dump'

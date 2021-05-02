@@ -4,28 +4,31 @@
   apt: pkg=vim state=latest
 
 - name: clone vim config
-  become: false
-  git: repo=https://github.com/psunix/dot-vim.git dest="{{ ansible_env.HOME }}/.vim" update=yes
+  become: true
+  become_user: ps
+  git: repo=https://github.com/psunix/dot-vim.git dest="/home/ps/.vim" update=yes
 
 - name: Create backup dir
-  become: false
+  become: true
+  become_user: ps
   file:
-    path: "{{ ansible_env.HOME }}/.vim/backup"
+    path: /home/ps/.vim/backup
     state: directory
 
 - name: create config symlink
-  become: false
-  file: path="{{ ansible_env.HOME }}/.vimrc"
-        src="{{ ansible_env.HOME }}/.vim/vimrc"
+  become: true
+  become_user: ps
+  file: path=/home/ps/.vimrc
+        src=/home/ps/.vim/vimrc
         state=link
         force=yes
 
 - name: install vim plugins
   become: true
-  become_user: "{{ ansible_env.USER }}"
+  become_user: ps
   shell: 'vim +"source ~/.vimrc" +"PlugInstall --sync" +qa'
 
 - name: update vim plugins
   become: true
-  become_user: "{{ ansible_env.USER }}"
+  become_user: ps
   shell: 'vim +"source ~/.vimrc" +"PlugUpdate --sync" +qa'

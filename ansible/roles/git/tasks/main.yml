@@ -19,17 +19,17 @@
 
 - name: add gnome keyring helper to git
   become: true
-  become_user: "{{ ansible_env.USER }}"
+  become_user: ps
   command: git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 - name: link gitignore
   become: true
-  become_user: "{{ ansible_env.USER }}"
+  become_user: ps
   file: src="{{ ansible_env.HOME }}/git/psunix/profile/git/gitignore" dest="{{ ansible_env.HOME }}/.gitignore" state=link
 
 - name: setup git config
   become: true
-  become_user: "{{ ansible_env.USER }}"
+  become_user: ps
   command: git config --global {{ item }}
   with_items:
     - alias.co checkout
