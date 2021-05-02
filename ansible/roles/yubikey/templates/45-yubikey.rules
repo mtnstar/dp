@@ -1,0 +1,1 @@
+ACTION=="remove", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0407", RUN+="/usr/bin/loginctl lock-sessions"

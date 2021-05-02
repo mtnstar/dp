@@ -1,4 +1,9 @@
 ---
+- name: Add an apt key for yubico repo
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 32CBA1A9 
+
 - apt_repository:
     repo: ppa:yubico/stable
     state: present
@@ -11,3 +16,32 @@
 
 - name: install yubico piv tool
   apt: pkg=yubico-piv-tool state=latest
+
+- name: add udev rule for yubikey
+  template:
+    src: 45-yubikey.rules
+    dest: /etc/udev/rules.d/
+    owner: root
+    group: root
+    mode: 0444
+ 
+- name: enable yubikey for pam
+  ansible.builtin.lineinfile:
+    path: /etc/pam.d/common-auth
+    regexp: '^auth\s+sufficient\s+pam_u2f\.so'
+    insertbefore: '^auth\s+.+\s+pam_unix\.so\s+nullok_secure'
+    line: 'auth sufficient pam_u2f.so'
+
+- name: make sure yubico config dir exists
+  file:
+    path: /home/ps/.config/Yubico/
+    state: directory
+    recurse: yes
+
+- name: add yubi keys for ps
+  template:
+    src: u2f_keys
+    dest: /home/ps/.config/Yubico/u2f_keys
+    owner: root
+    group: root
+    mode: 0444
