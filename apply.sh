@@ -23,9 +23,9 @@ fi
 
 
 if [ $# -eq 0 ]; then
-  ansible-playbook ansible/desktop.yml --ask-become-pass
+  sudo ansible-playbook ansible/desktop.yml
 else
-  ansible-playbook ansible/desktop.yml --ask-become-pass -t=$1
+  sudo ansible-playbook ansible/desktop.yml -t=$1
 fi
 
 exit 0
