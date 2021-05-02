@@ -3,7 +3,7 @@
   apt: pkg=i3xrocks-battery state=latest
 
 - name: create regolith config dir
-  file: path="{{ ansible_env.HOME }}/.config/regolith/i3" state=directory
+  file: path=/home/ps/.config/regolith/i3 state=directory
 
 - name: link i3 config from github profile files
-  file: src="{{ ansible_env.HOME }}/git/psunix/profile/regolith/i3/config" dest="{{ ansible_env.HOME}}/.config/regolith/i3/config" state=link
+  file: src=/home/ps/git/psunix/profile/regolith/i3/config dest=/home/ps/.config/regolith/i3/config state=link
