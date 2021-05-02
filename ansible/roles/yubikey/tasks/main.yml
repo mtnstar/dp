@@ -49,6 +49,6 @@
   template:
     src: u2f_keys
     dest: ~/.config/Yubico/u2f_keys
-    owner: root
-    group: root
-    mode: 0444
+    owner: ps
+    group: ps
+    mode: 0440
