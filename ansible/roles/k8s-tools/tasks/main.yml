@@ -1,41 +1,57 @@
 ---
 - name: create bin directory if required...
+  become: true
+  become_user: ps
   file:
     path: '~/bin'
     state: directory
     mode: 0700
 
 - name: kubectl download
+  become: true
+  become_user: ps
   get_url:
     url: 'https://storage.googleapis.com/kubernetes-release/release/v1.14.6/bin/linux/amd64/kubectl'
     dest: ~/bin/
     checksum: 'sha256:5f8e8d8de929f64b8f779d0428854285e1a1c53a02cc2ad6b1ce5d32eefad25c'
 
 - name: kubectl set executable
+  become: true
+  become_user: ps
   file: dest=~/bin/kubectl mode=a+x
 
 - name: kubetpl download
+  become: true
+  become_user: ps
   get_url:
     url: 'https://github.com/shyiko/kubetpl/releases/download/0.7.1/kubetpl-0.7.1-linux-amd64'
     dest: ~/bin/kubetpl
     checksum: 'sha256:46e982db7487df997ce6ae2e739f198a0868d4bb00f46a578610c02162e20dd5'
 
 - name: kubetpl set executable
+  become: true
+  become_user: ps
   file: dest=~/bin/kubetpl mode=a+x
 
 - name: kustomize download
+  become: true
+  become_user: ps
   get_url:
     url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.8.8/kustomize_v3.8.8_linux_amd64.tar.gz'
     dest: /tmp/kustomize.tar.gz
     checksum: 'sha256:175938206f23956ec18dac3da0816ea5b5b485a8493a839da278faac82e3c303'
 
 - name: create bin directory if required...
+  become: true
+  become_user: ps
   file:
     path: '~/bin'
     state: directory
     mode: 0700
 
 - name: kustomize unarchive
+  become: true
+  become_user: ps
   unarchive:
     remote_src: yes
     src: /tmp/kustomize.tar.gz

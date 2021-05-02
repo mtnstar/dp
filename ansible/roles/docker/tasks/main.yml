@@ -19,6 +19,6 @@
   apt: pkg=docker-compose state=latest
 
 - name: add current user to docker group
-  user: name={{ ansible_env.USER }}
+  user: name=ps
         groups=docker
         append=yes

@@ -1,8 +1,4 @@
 ---
-
-# - name: install qt webkit dev
-  # apt: pkg=libqtwebkit-dev state=latest
-
 - name: install mysql client
   apt: pkg=mysql-client state=latest
 

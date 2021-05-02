@@ -6,20 +6,20 @@
 - name: clone vim config
   become: true
   become_user: ps
-  git: repo=https://github.com/psunix/dot-vim.git dest="/home/ps/.vim" update=yes
+  git: repo=https://github.com/psunix/dot-vim.git dest="~/.vim" update=yes
 
 - name: Create backup dir
   become: true
   become_user: ps
   file:
-    path: /home/ps/.vim/backup
+    path: ~/.vim/backup
     state: directory
 
 - name: create config symlink
   become: true
   become_user: ps
-  file: path=/home/ps/.vimrc
-        src=/home/ps/.vim/vimrc
+  file: path=~/.vimrc
+        src=~/.vim/vimrc
         state=link
         force=yes
 

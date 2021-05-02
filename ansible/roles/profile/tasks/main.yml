@@ -1,7 +1,9 @@
 ---
 
 - name: clone github profile repo
-  git: repo=https://github.com/psunix/profile.git dest=/home/ps/git/psunix/profile update=yes
+  become: true
+  become_user: ps
+  git: repo=https://github.com/psunix/profile.git dest=~/git/psunix/profile update=yes
 
 - name: link dot bashrc
   become: true

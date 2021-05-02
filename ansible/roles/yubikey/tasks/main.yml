@@ -33,15 +33,19 @@
     line: 'auth sufficient pam_u2f.so'
 
 - name: make sure yubico config dir exists
+  become: true
+  become_user: ps
   file:
-    path: /home/ps/.config/Yubico/
+    path: ~/.config/Yubico/
     state: directory
     recurse: yes
 
 - name: add yubi keys for ps
+  become: true
+  become_user: ps
   template:
     src: u2f_keys
-    dest: /home/ps/.config/Yubico/u2f_keys
+    dest: ~/.config/Yubico/u2f_keys
     owner: root
     group: root
     mode: 0444

@@ -1,5 +1,7 @@
 ---
 - name: create bin directory if required...
+  become: true
+  become_user: ps
   file:
     path: '~/bin'
     state: directory
@@ -12,12 +14,16 @@
     checksum: 'sha256:744fbf8d55eeee6be3bcbec67ec07e418940d71789756fccfa471150a18ca973'
 
 - name: s2i unarchive
+  become: true
+  become_user: ps
   unarchive:
     remote_src: yes
     src: /tmp/s2i.tar.gz
     dest: '~/bin'
 
 - name: s2i set executable
+  become: true
+  become_user: ps
   file: dest=~/bin/s2i mode=a+x
 
 - name: s2i cleanup
