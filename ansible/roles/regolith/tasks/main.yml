@@ -11,3 +11,15 @@
   become: true
   become_user: ps
   file: src=~/git/psunix/profile/regolith/i3/config dest=~/.config/regolith/i3/config state=link
+
+- name: create xorg conf dir
+  file: path=/etc/X11/xorg.conf.d state=directory
+
+- name: disable touch click touchpad
+  template:
+    src: 50-synaptics.conf
+    dest: /etc/X11/xorg.conf.d/50-synaptics.conf
+    owner: root
+    group: root
+    mode: 0444
+
