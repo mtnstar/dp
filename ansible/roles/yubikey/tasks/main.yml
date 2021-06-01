@@ -27,6 +27,14 @@
     owner: root
     group: root
     mode: 0444
+
+- name: add yubico udev rules
+  template:
+    src: 70-u2f.rules
+    dest: /etc/udev/rules.d/
+    owner: root
+    group: root
+    mode: 0444
  
 - name: enable yubikey for pam
   ansible.builtin.lineinfile:
@@ -35,20 +43,5 @@
     insertbefore: '^auth\s+.+\s+pam_unix\.so\s+nullok_secure'
     line: 'auth sufficient pam_u2f.so'
 
-- name: make sure yubico config dir exists
-  become: true
-  become_user: ps
-  file:
-    path: ~/.config/Yubico/
-    state: directory
-    recurse: yes
-
-- name: add yubi keys for ps
-  become: true
-  become_user: ps
-  template:
-    src: u2f_keys
-    dest: ~/.config/Yubico/u2f_keys
-    owner: ps
-    group: ps
-    mode: 0440
+- name: reload udev rules
+  shell: 'udevadm control --reload-rules && udevadm trigger'

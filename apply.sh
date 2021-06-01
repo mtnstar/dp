@@ -24,6 +24,7 @@ fi
 
 if [ $# -eq 0 ]; then
   sudo ansible-playbook ansible/desktop.yml
+  ./bin/init_yubikey.sh
 else
   sudo ansible-playbook ansible/desktop.yml -t=$1
 fi
