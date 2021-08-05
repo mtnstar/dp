@@ -4,12 +4,12 @@
 
 - name: create regolith config dir
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: path=~/.config/regolith/i3 state=directory
 
 - name: link i3 config from github profile files
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: src=~/git/psunix/profile/regolith/i3/config dest=~/.config/regolith/i3/config state=link
 
 - name: create xorg conf dir

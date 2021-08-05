@@ -5,19 +5,19 @@
 
 - name: clone vim config
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   git: repo=https://github.com/psunix/dot-vim.git dest="~/.vim" update=yes
 
 - name: Create backup dir
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     path: ~/.vim/backup
     state: directory
 
 - name: create config symlink
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: path=~/.vimrc
         src=~/.vim/vimrc
         state=link
@@ -25,10 +25,10 @@
 
 - name: install vim plugins
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   shell: 'vim +"source ~/.vimrc" +"PlugInstall --sync" +qa'
 
 - name: update vim plugins
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   shell: 'vim +"source ~/.vimrc" +"PlugUpdate --sync" +qa'

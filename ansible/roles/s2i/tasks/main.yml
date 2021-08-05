@@ -1,7 +1,7 @@
 ---
 - name: create bin directory if required...
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     path: '~/bin'
     state: directory
@@ -15,7 +15,7 @@
 
 - name: s2i unarchive
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   unarchive:
     remote_src: yes
     src: /tmp/s2i.tar.gz
@@ -23,7 +23,7 @@
 
 - name: s2i set executable
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: dest=~/bin/s2i mode=a+x
 
 - name: s2i cleanup

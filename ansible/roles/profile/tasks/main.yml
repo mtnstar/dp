@@ -2,12 +2,12 @@
 
 - name: clone github profile repo
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   git: repo=https://github.com/psunix/profile.git dest=~/git/psunix/profile update=yes
 
 - name: link dot bashrc
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     src: '~/git/psunix/profile/bash/dot_bashrc'
     dest: '~/.bashrc'

@@ -1,5 +1,5 @@
 ---
 
-- name: install xerox driver
-  apt:
-    deb: https://www.support.xerox.com/download/135923
+# - name: install xerox driver
+  # apt:
+    # deb: https://www.support.xerox.com/download/135923

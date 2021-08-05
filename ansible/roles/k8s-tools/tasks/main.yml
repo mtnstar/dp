@@ -1,7 +1,7 @@
 ---
 - name: create bin directory if required...
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     path: '~/bin'
     state: directory
@@ -9,7 +9,7 @@
 
 - name: kubectl download
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   get_url:
     url: 'https://storage.googleapis.com/kubernetes-release/release/v1.14.6/bin/linux/amd64/kubectl'
     dest: ~/bin/
@@ -17,12 +17,12 @@
 
 - name: kubectl set executable
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: dest=~/bin/kubectl mode=a+x
 
 - name: kubetpl download
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   get_url:
     url: 'https://github.com/shyiko/kubetpl/releases/download/0.7.1/kubetpl-0.7.1-linux-amd64'
     dest: ~/bin/kubetpl
@@ -30,12 +30,12 @@
 
 - name: kubetpl set executable
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: dest=~/bin/kubetpl mode=a+x
 
 - name: kustomize download
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   get_url:
     url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.8.8/kustomize_v3.8.8_linux_amd64.tar.gz'
     dest: /tmp/kustomize.tar.gz
@@ -43,7 +43,7 @@
 
 - name: create bin directory if required...
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     path: '~/bin'
     state: directory
@@ -51,7 +51,7 @@
 
 - name: kustomize unarchive
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   unarchive:
     remote_src: yes
     src: /tmp/kustomize.tar.gz

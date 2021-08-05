@@ -37,6 +37,6 @@
   apt: pkg=gir1.2-spiceclientgtk-3.0 state=latest
 
 - name: Adding user to libvirtd group
-  user: name=ps
+  user: name="{{ main_user }}"
         groups=kvm
         append=yes

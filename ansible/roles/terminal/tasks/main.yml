@@ -4,14 +4,14 @@
 
 - name: xfce terminal settings directory
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     path: '~/.config/xfce4/terminal'
     state: directory
 
 - name: xfce terminal settings
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file:
     src: '~/git/psunix/profile/xfce_terminal/terminalrc'
     dest: '~/.config/xfce4/terminal/terminalrc'

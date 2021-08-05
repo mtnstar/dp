@@ -19,17 +19,17 @@
 
 - name: add gnome keyring helper to git
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   command: git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 - name: link gitignore
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   file: src=~/git/psunix/profile/git/gitignore dest=~/.gitignore state=link
 
 - name: setup git config
   become: true
-  become_user: ps
+  become_user: "{{ main_user }}"
   command: git config --global {{ item }}
   with_items:
     - alias.co checkout

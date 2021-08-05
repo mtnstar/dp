@@ -21,12 +21,10 @@ if ! which ansible-playbook > /dev/null; then
   ./bin/install_ansible.sh
 fi
 
-
 if [ $# -eq 0 ]; then
-  sudo ansible-playbook ansible/desktop.yml
-  ./bin/init_yubikey.sh
+  sudo ansible-playbook ansible/desktop.yml --extra-vars "main_user=$USER"
 else
-  sudo ansible-playbook ansible/desktop.yml -t=$1
+  sudo ansible-playbook ansible/desktop.yml -t=$1 --extra-vars "main_user=$USER"
 fi
 
 exit 0
