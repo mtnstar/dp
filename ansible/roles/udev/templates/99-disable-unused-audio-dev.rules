@@ -1,3 +1,6 @@
 # disable lenovo thunderbolt dock usb audio devices
 ACTION=="add", ATTR{idVendor}=="17ef", ATTR{idProduct}=="6047", RUN="/bin/sh -c 'echo 1 >/sys/\$devpath/remove'"
 ACTION=="add", ATTR{idVendor}=="17ef", ATTR{idProduct}=="306a", RUN="/bin/sh -c 'echo 1 >/sys/\$devpath/remove'"
+
+# disable logi HD webcam's microphone
+SUBSYSTEM=="usb", DRIVER=="snd-usb-audio", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08e5", ATTR{authorized}="0"
