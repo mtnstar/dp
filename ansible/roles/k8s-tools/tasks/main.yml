@@ -37,9 +37,9 @@
   become: true
   become_user: "{{ main_user }}"
   get_url:
-    url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.8.8/kustomize_v3.8.8_linux_amd64.tar.gz'
+    url: 'https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.4.0/kustomize_v4.4.0_linux_amd64.tar.gz'
     dest: /tmp/kustomize.tar.gz
-    checksum: 'sha256:175938206f23956ec18dac3da0816ea5b5b485a8493a839da278faac82e3c303'
+    checksum: 'sha256:bf3a0d7409d9ce6a4a393ba61289047b4cb875a36ece1ec94b36924a9ccbaa0f'
 
 - name: create bin directory if required...
   become: true
