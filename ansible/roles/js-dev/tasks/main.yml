@@ -21,7 +21,7 @@
 
     - name: Install node
       shell: |
-        bash -lc 'source ~/.nvm/nvm.sh && nvm install {{item}}'
+        bash -lc 'source ~/.nvm/nvm.sh && nvm install {{item}} --default'
       args:
         executable: /bin/bash
         chdir: "$HOME"
