@@ -19,6 +19,7 @@
     - { role: display, become: true , tags: ['display'] }
     - { role: docker, become: true , tags: ['docker'] }
     - { role: dev-tools, become: true , tags: ['dev-tools'] }
+    - { role: js-dev, become: true , tags: ['js-dev'] }
     - { role: git, become: true , tags: ['git'] }
     - { role: nitrokey, become: true , tags: ['nitrokey'] }
     - { role: yubikey, become: true , tags: ['yubikey'] }

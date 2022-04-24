@@ -1,0 +1,30 @@
+---
+
+- name: setup node
+  become: true
+  become_flags: -i # Execute config files such as .profile (Ansible uses non-interactive login shells)
+  become_user: "{{ main_user }}"
+  block:
+    - name: Install nvm
+      shell: >
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash
+      args:
+        executable: /bin/bash
+        chdir: "$HOME"
+        creates: "$HOME/.nvm/nvm.sh"
+
+    - name: Setup .profile
+      lineinfile:
+        path: ~/.profile
+        line: source ~/.nvm/nvm.sh # This will make sure Node is on the user's PATH
+        create: yes
+
+    - name: Install node
+      shell: |
+        bash -lc 'source ~/.nvm/nvm.sh && nvm install {{item}}'
+      args:
+        executable: /bin/bash
+        chdir: "$HOME"
+        creates: "$HOME/.nvm/versions/node/v{{item}}"
+      loop:
+        - 14.19.1

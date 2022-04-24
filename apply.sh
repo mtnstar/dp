@@ -24,7 +24,7 @@ fi
 if [ $# -eq 0 ]; then
   sudo ansible-playbook ansible/desktop.yml --extra-vars "main_user=$USER"
 else
-  sudo ansible-playbook ansible/desktop.yml -t=$1 --extra-vars "main_user=$USER"
+  sudo ansible-playbook ansible/desktop.yml -t=$1 --extra-vars "main_user=$USER" -v
 fi
 
 exit 0
