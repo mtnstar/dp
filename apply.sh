@@ -1,4 +1,4 @@
-SRC_BASE_DIR=~/git/psunix
+SRC_BASE_DIR=~/git/setup
 
 if ! which git > /dev/null; then
   sudo apt install git
@@ -8,7 +8,7 @@ mkdir -p $SRC_BASE_DIR
 cd $SRC_BASE_DIR
 
 if [ ! -d "$SRC_BASE_DIR/dp" ]; then
-  git clone https://github.com/psunix/dp.git
+  git clone https://github.com/mtnstar/dp.git
   cd dp
 else
   cd dp
