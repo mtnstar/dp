@@ -19,12 +19,14 @@
         line: source ~/.nvm/nvm.sh # This will make sure Node is on the user's PATH
         create: yes
 
-    - name: Install node
+    - name: Install node, yarn
       shell: |
-        bash -lc 'source ~/.nvm/nvm.sh && nvm install {{item}} --default'
+        bash -lc 'source ~/.nvm/nvm.sh && nvm install {{item}} --default' &&
+        bash -lc 'source ~/.nvm/nvm.sh && nvm use {{item}} && npm install -g yarn'
       args:
         executable: /bin/bash
         chdir: "$HOME"
         creates: "$HOME/.nvm/versions/node/v{{item}}"
       loop:
         - 16.14.2
+        - 14.19.1
