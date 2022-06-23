@@ -11,9 +11,9 @@
   become: true
   become_user: "{{ main_user }}"
   get_url:
-    url: 'https://storage.googleapis.com/kubernetes-release/release/v1.14.6/bin/linux/amd64/kubectl'
+    url: 'https://dl.k8s.io/v1.24.2/bin/linux/amd64/kubectl'
     dest: ~/bin/
-    checksum: 'sha256:5f8e8d8de929f64b8f779d0428854285e1a1c53a02cc2ad6b1ce5d32eefad25c'
+    checksum: 'sha256:f15fb430afd79f79ef7cf94a4e402cd212f02d8ec5a5e6a7ba9c3d5a2f954542'
 
 - name: kubectl set executable
   become: true
