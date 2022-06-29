@@ -4,8 +4,8 @@
   apt_key:
     url: https://regolith-desktop.io/regolith.key
 
-- name: add regolith repository
-  apt_repository: repo='deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.io/release-ubuntu-jammy-amd64 jammy main"' state=present
+#- name: add regolith repository
+#  apt_repository: repo='deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.io/release-ubuntu-jammy-amd64 jammy main"' state=present
 
 - name: install regolith desktop
   apt: pkg=regolith-desktop state=latest

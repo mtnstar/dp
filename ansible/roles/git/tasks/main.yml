@@ -10,22 +10,22 @@
   apt: pkg=meld state=latest
 
 - name: install gnome keyring dev
-  apt: pkg=libgnome-keyring-dev state=latest
+  apt: pkg=libsecret-1-dev state=latest
 
 - name: compile git gnome keyring helper
   command: make
   args:
-    chdir: /usr/share/doc/git/contrib/credential/gnome-keyring
+    chdir: /usr/share/doc/git/contrib/credential/libsecret
 
 - name: add gnome keyring helper to git
   become: true
   become_user: "{{ main_user }}"
-  command: git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+  command: git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 - name: link gitignore
   become: true
   become_user: "{{ main_user }}"
-  file: src=~/git/psunix/profile/git/gitignore dest=~/.gitignore state=link
+  file: src=~/git/setup/profile/git/gitignore dest=~/.gitignore state=link
 
 - name: setup git config
   become: true
