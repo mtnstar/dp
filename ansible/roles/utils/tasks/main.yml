@@ -2,9 +2,6 @@
 - name: install uuid
   apt: pkg=uuid state=latest
 
-- apt_repository:
-    repo: ppa:linuxuprising/shutter
-
 - name: install shutter screenshot tool
   apt: pkg=shutter state=latest
 
