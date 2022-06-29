@@ -15,6 +15,16 @@
     path: ~/.vim/backup
     state: directory
 
+# - name: install vim plugins
+  # become: true
+  # become_user: "{{ main_user }}"
+  # shell: 'vim -u ~/.vim/vimrc-setup +"PlugInstall --sync" +qa'
+
+# - name: update vim plugins
+  # become: true
+  # become_user: "{{ main_user }}"
+  # shell: 'vim +"PlugUpdate --sync" +qa'
+
 - name: create config symlink
   become: true
   become_user: "{{ main_user }}"
@@ -22,13 +32,3 @@
         src=~/.vim/vimrc
         state=link
         force=yes
-
-- name: install vim plugins
-  become: true
-  become_user: "{{ main_user }}"
-  shell: 'vim +"source ~/.vimrc" +"PlugInstall --sync" +qa'
-
-- name: update vim plugins
-  become: true
-  become_user: "{{ main_user }}"
-  shell: 'vim +"source ~/.vimrc" +"PlugUpdate --sync" +qa'
