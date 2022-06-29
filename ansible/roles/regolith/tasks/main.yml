@@ -21,7 +21,7 @@
 - name: link i3 config from github profile files
   become: true
   become_user: "{{ main_user }}"
-  file: src=~/git/psunix/profile/regolith/i3/config dest=~/.config/regolith/i3/config state=link
+  file: src=~/git/setup/profile/regolith2/i3/config.d dest=~/.config/regolith2/i3/config.d state=link
 
 - name: create xorg conf dir
   file: path=/etc/X11/xorg.conf.d state=directory
