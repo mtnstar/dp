@@ -3,13 +3,13 @@
 - name: clone github profile repo
   become: true
   become_user: "{{ main_user }}"
-  git: repo=https://github.com/psunix/profile.git dest=~/git/psunix/profile update=yes
+  git: repo=https://github.com/mtnstar/profile.git dest=~/git/setup/profile update=yes
 
 - name: link dot bashrc
   become: true
   become_user: "{{ main_user }}"
   file:
-    src: '~/git/psunix/profile/bash/dot_bashrc'
+    src: '~/git/setup/profile/bash/dot_bashrc'
     dest: '~/.bashrc'
     state: link
     force: true
