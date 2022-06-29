@@ -23,6 +23,11 @@
   become_user: "{{ main_user }}"
   file: src=~/git/setup/profile/regolith2/i3/config.d dest=~/.config/regolith2/i3/config.d state=link
 
+- name: link Xresources
+  become: true
+  become_user: "{{ main_user }}"
+  file: src=~/git/setup/profile/regolith2/Xresources dest=~/.config/regolith2/Xresources state=link
+
 - name: create xorg conf dir
   file: path=/etc/X11/xorg.conf.d state=directory
 
