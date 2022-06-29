@@ -1,9 +1,5 @@
 ---
 
-- name: install mysql workbench
-  apt:
-    deb: https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.21-1ubuntu20.04_amd64.deb
-
 - name: install net-tools
   apt: pkg=net-tools state=latest
 
