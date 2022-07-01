@@ -13,7 +13,7 @@
   become: true
   become_user: "{{ main_user }}"
   file:
-    src: '~/git/psunix/profile/xfce_terminal/terminalrc'
+    src: '~/git/setup/profile/xfce_terminal/terminalrc'
     dest: '~/.config/xfce4/terminal/terminalrc'
     state: link
     force: true
