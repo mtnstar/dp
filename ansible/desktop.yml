@@ -34,3 +34,4 @@
     - { role: printer, become: true , tags: ['printer'] }
     - { role: udev, become: true , tags: ['udev'] }
     - { role: streaming-tools, become: true , tags: ['streaming-tools'] }
+    - { role: video, become: true , tags: ['video'] }
