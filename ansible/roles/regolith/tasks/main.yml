@@ -2,7 +2,7 @@
 
 - name: ensure repository key
   apt_key:
-    url: https://regolith-desktop.io/regolith.key
+    url: https://regolith-desktop.org/regolith.key
 
 #- name: add regolith repository
 #  apt_repository: repo='deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.io/release-ubuntu-jammy-amd64 jammy main"' state=present
