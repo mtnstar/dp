@@ -4,8 +4,8 @@
   apt_key:
     url: https://regolith-desktop.org/regolith.key
 
-#- name: add regolith repository
-#  apt_repository: repo='deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.io/release-ubuntu-jammy-amd64 jammy main"' state=present
+- name: add regolith repository
+  apt_repository: repo='deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main"' state=present
 
 - name: install regolith desktop
   apt: pkg=regolith-desktop state=latest
@@ -16,7 +16,7 @@
 - name: create regolith config dir
   become: true
   become_user: "{{ main_user }}"
-  file: path=~/.config/regolith/i3 state=directory
+  file: path=~/.config/regolith2/i3 state=directory
 
 - name: link i3 config from github profile files
   become: true
