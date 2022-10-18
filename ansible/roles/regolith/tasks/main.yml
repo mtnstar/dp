@@ -13,6 +13,9 @@
 - name: install battery status
   apt: pkg=i3xrocks-battery state=latest
 
+- name: default base launchers config
+  file: path=/usr/share/regolith/i3/config.d/15_base_launchers state=absent
+
 - name: create regolith config dir
   become: true
   become_user: "{{ main_user }}"
