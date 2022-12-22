@@ -6,4 +6,4 @@
 - name: set gnome default scale to 100%
   become: true
   become_user: "{{ main_user }}"
-  shell: 'whoami && gsettings set org.gnome.desktop.interface scaling-factor 1'
+  shell: 'whoami && gsettings set org.gnome.desktop.interface scaling-factor 1 && gsettings set com.system76.hidpi enable false'
