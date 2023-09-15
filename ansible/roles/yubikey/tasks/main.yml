@@ -20,28 +20,29 @@
 - name: install yubico piv tool
   apt: pkg=yubico-piv-tool state=latest
 
-- name: add udev rule for yubikey
-  template:
-    src: 45-yubikey.rules
-    dest: /etc/udev/rules.d/
-    owner: root
-    group: root
-    mode: 0444
+# FIXME
+#- name: add udev rule for yubikey
+  #template:
+    #src: 45-yubikey.rules
+    #dest: /etc/udev/rules.d/
+    #owner: root
+    #group: root
+    #mode: 0444
 
-- name: add yubico udev rules
-  template:
-    src: 70-u2f.rules
-    dest: /etc/udev/rules.d/
-    owner: root
-    group: root
-    mode: 0444
+#- name: add yubico udev rules
+  #template:
+    #src: 70-u2f.rules
+    #dest: /etc/udev/rules.d/
+    #owner: root
+    #group: root
+    #mode: 0444
  
-- name: enable yubikey for pam
-  ansible.builtin.lineinfile:
-    path: /etc/pam.d/common-auth
-    regexp: '^auth\s+sufficient\s+pam_u2f\.so'
-    insertbefore: '^auth\s+.+\s+pam_unix\.so\s+nullok_secure'
-    line: 'auth sufficient pam_u2f.so'
+#- name: enable yubikey for pam
+  #ansible.builtin.lineinfile:
+    #path: /etc/pam.d/common-auth
+    #regexp: '^auth\s+sufficient\s+pam_u2f\.so'
+    #insertbefore: '^auth\s+.+\s+pam_unix\.so\s+nullok_secure'
+    #line: 'auth sufficient pam_u2f.so'
 
-- name: reload udev rules
-  shell: 'udevadm control --reload-rules && udevadm trigger'
+#- name: reload udev rules
+  #shell: 'udevadm control --reload-rules && udevadm trigger'
