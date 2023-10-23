@@ -2,9 +2,8 @@
 
 - name: oc client download
   get_url:
-    url: 'https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz'
-    dest: /tmp/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
-    checksum: 'sha256:4b0f07428ba854174c58d2e38287e5402964c9a9355f6c359d1242efd0990da3'
+    url: 'https://downloads-openshift-console.ocp.appuio.puzzle.ch/amd64/linux/oc.tar'
+    dest: /tmp/oc.tar
 
 - name: create bin directory if required...
   become: true
@@ -19,19 +18,10 @@
   become_user: "{{ main_user }}"
   unarchive:
     remote_src: yes
-    src: /tmp/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+    src: /tmp/oc.tar
     dest: '~/bin'
-
-- name: oc client link
-  become: true
-  become_user: "{{ main_user }}"
-  file:
-    src: '~/bin/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc'
-    dest: '~/bin/oc'
-    state: link
-    force: true
 
 - name: oc client cleanup
   file:
-    path: /tmp/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+    path: /tmp/oc.tar
     state: absent
