@@ -10,13 +10,17 @@
 - name: install docker
   apt: pkg=docker-ce state=latest
 
-- name: remove legacy docker compose
-  file:
-    dest: "/usr/local/bin/docker-compose"
-    state: absent
+- name: install docker cli
+  apt: pkg=docker-ce-cli state=latest
 
-- name: install docker compose
-  apt: pkg=docker-compose state=latest
+- name: install containerd.io
+  apt: pkg=containerd.io state=latest
+
+- name: install docker-buildx-plugin
+  apt: pkg=docker-buildx-plugin state=latest
+
+- name: install docker compose plugin
+  apt: pkg=docker-compose-plugin state=latest
 
 - name: add current user to docker group
   user: name="{{ main_user }}"
