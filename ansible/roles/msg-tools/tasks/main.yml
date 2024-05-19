@@ -1,7 +1,7 @@
 ---
 
 - apt_key: url=https://updates.signal.org/desktop/apt/keys.asc state=present
-- apt_repository: repo='deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main' state=present update_cache='yes'
+- apt_repository: repo='deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' state=present update_cache='yes'
 - apt: name='signal-desktop' state='present' update_cache='yes'
 
 - name: install thunderbird
