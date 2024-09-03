@@ -5,6 +5,9 @@
 - name: install shutter screenshot tool
   apt: pkg=shutter state=latest
 
+- name: install flameshot screenshot tool
+  apt: pkg=flameshot state=latest
+
 - name: install jq command line json parser
   apt: pkg=jq state=latest
 
